@@ -11,7 +11,7 @@ from langchain_google_genai import HarmBlockThreshold, HarmCategory
 from langchain.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 
-api_key = "GOOGLE_API_KEY"
+api_key = "AIzaSyD9_BDASRH0MqOuv2dYJUvoIm_x3lZEKLU"
 
 def get_pdf_text(pdf_docs):
     text=""
