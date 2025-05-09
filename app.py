@@ -7,6 +7,7 @@ from langchain.vectorstores import FAISS
 from langchain.embeddings import SentenceTransformerEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import HarmBlockThreshold, HarmCategory
 from langchain.prompts import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
 
@@ -46,7 +47,10 @@ answer:
 """
     model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",
                                temperature = 0.3,
-                               google_api_key = api_key
+                               google_api_key = api_key,
+                                   safety_settings={
+        HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
+    }
                               )
     prompt = PromptTemplate(
     template = prompt_template,
