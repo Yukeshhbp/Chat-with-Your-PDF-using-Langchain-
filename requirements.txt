@@ -7,3 +7,5 @@ huggingface_hub
 PyPDF2
 langchain_google_genai
 langchain-huggingface
+langchain-community
+faiss-cpu
